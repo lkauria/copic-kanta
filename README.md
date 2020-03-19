@@ -6,9 +6,4 @@ listaaminen, joissa muste on vähissä, tietyn värin perusteella hakeminen.
 
 ![tietokantakaavio](https://github.com/ikylios/copic-kanta/blob/master/tietokantakaavio1.png)
 
-
-#Viikko 2
-
-
-Lisätty toiminnallisuus esineiden lisäämiseen, sekä boolean näyttämään 
-esineen musteen olevan vähissä.
+[User storyt](https://github.com/ikylios/copic-kanta/blob/master/documentation/userstories)
