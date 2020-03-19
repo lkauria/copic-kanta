@@ -7,7 +7,7 @@ listaaminen, joissa muste on vähissä, tietyn värin perusteella hakeminen.
 [User storyt](https://github.com/ikylios/copic-kanta/blob/master/documentation/userstories.md)
 
 
-[Heroku](https://copic-kanta.heroku.com/items)
+[Heroku](https://copic-kanta.heroku.com/items/)
 
 
 ![tietokantakaavio](https://github.com/ikylios/copic-kanta/blob/master/documentation/tietokantakaavio1.png)
