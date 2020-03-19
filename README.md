@@ -4,6 +4,8 @@ Copic-kanta auttaa oman kokoelman ylläpidossa. Toimintoina on mm. tussien
 listaaminen, joissa muste on vähissä, tietyn värin perusteella hakeminen.
 
 
-![tietokantakaavio](https://github.com/ikylios/copic-kanta/blob/master/tietokantakaavio1.png)
+[User storyt](https://github.com/ikylios/copic-kanta/blob/master/documentation/userstories.md)
 
-[User storyt](https://github.com/ikylios/copic-kanta/blob/master/documentation/userstories)
+
+![tietokantakaavio](https://github.com/ikylios/copic-kanta/blob/master/documentation/tietokantakaavio1.png)
+
