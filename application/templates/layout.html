@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Copic-kanta</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="{{ url_for('items_index') }}">List items</a></li>
+      <li><a href="{{ url_for('items_form') }}">Add an item</a></li>
+    </ul>
+
+    {% block body %}
+      <p>
+       Content 
+      </p>
+    {% endblock %}
+  </body>
+</html>

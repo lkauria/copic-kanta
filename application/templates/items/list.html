@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Item</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.lowink }}</td>
+      <td>
+	<form method="POST" action="{{ url_for('items_set_lowink', item_id=item.id) }}">
+	  <input type="submit" value="Low ink!"/>
+	</form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
