@@ -8,6 +8,7 @@
     {% for item in items %}
     <tr>
       <td>{{ item.name }}</td>
+      <td>{{ item.type }}</td>
       <td>{{ item.lowink }}</td>
       <td>
 	<form method="POST" action="{{ url_for('items_set_lowink', item_id=item.id) }}">

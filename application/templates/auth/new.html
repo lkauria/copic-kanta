@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('auth_create') }}">
+  <tr>
+   <td>
+     {{ form.username.label }}
+   </td>
+   <td>
+     {{ form.username }}
+   </td>
+  </tr>
+  <tr>
+   <td>
+   {{ form.password.label }}
+   </td>
+   {{ form.password }}
+     <td colspan="2">
+       <input type="submit" value="Create account!"/>
+     </td>
+         </tr>
+</form>
+{% endblock %}
