@@ -7,6 +7,7 @@
     </tr>
     {% for item in items %}
     <tr>
+      <td>{{ item.colorcode }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.type }}</td>
       <td>{{ item.lowink }}</td>
@@ -15,6 +16,13 @@
 	  <input type="submit" value="Low ink!"/>
 	</form>
       </td>
+      {% if current_user.is_authenticated %}
+      <td>
+       <form method="POST" action="{{ url_for('items_delete', item_id=item.id) }}" >
+          <input type="submit" value="Delete item"/>
+        </form>
+      </td>
+      {% endif %}
     </tr>
     {% endfor %}
   </table>

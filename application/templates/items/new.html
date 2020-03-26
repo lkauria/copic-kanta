@@ -2,7 +2,15 @@
   
 {% block body %}
 <form method="POST" action="{{ url_for('items_create') }}">
- 	 <tr>
+  <tr>
+   <td>
+      {{ form.colorcode.label }}
+   </td>
+   <td>
+      {{ form.colorcode }}
+   </td>
+  </tr>  
+ <tr>
     <td>
       {{ form.name.label }}
     </td>
