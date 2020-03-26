@@ -11,12 +11,12 @@
       <td>{{ item.name }}</td>
       <td>{{ item.type }}</td>
       <td>{{ item.lowink }}</td>
+      {% if current_user.is_authenticated %}
       <td>
 	<form method="POST" action="{{ url_for('items_set_lowink', item_id=item.id) }}">
 	  <input type="submit" value="Low ink!"/>
 	</form>
       </td>
-      {% if current_user.is_authenticated %}
       <td>
        <form method="POST" action="{{ url_for('items_delete', item_id=item.id) }}" >
           <input type="submit" value="Delete item"/>
