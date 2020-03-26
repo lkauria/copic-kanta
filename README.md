@@ -9,6 +9,7 @@ listaaminen, joissa muste on vähissä, tietyn värin perusteella hakeminen.
 
 [Heroku](https://copic-kanta.herokuapp.com/)
 
+Testitunnus: käyttäjänimi pablo ja salasana picasso
 
 ![tietokantakaavio](https://github.com/ikylios/copic-kanta/blob/master/documentation/tietokantakaavio1.png)
 
