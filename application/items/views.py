@@ -10,7 +10,7 @@ def items_index():
 	return render_template("items/list.html", items = Item.query.all())
 
 
-@app.route("/items/myitems", methods=["GET"])
+@app.route("/items/myitems/", methods=["GET"])
 @login_required
 def items_myindex():
         return render_template("items/list.html", items =
