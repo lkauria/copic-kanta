@@ -1,10 +1,17 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
+ <table>
     <tr>
-      <th>Item</th>
+      <h3>Items</h3>
     </tr>
+    <tr>
+      <td>
+	<form action="{{ url_for('items_lowink') }}">
+	  <button type="submit">List items with low ink</button>
+	</form>
+      </td>
+    </tr> 
     {% for item in items %}
     <tr>
       <td>{{ item.colorcode }}</td>
@@ -14,7 +21,7 @@
       {% if current_user.is_authenticated %}
       <td>
 	<form method="POST" action="{{ url_for('items_set_lowink', item_id=item.id) }}">
-	  <input type="submit" value="Low ink!"/>
+	  <input type="submit" value="Switch ink status"/>
 	</form>
       </td>
       <td>

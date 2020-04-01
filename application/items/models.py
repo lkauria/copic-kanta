@@ -1,5 +1,7 @@
 from application import db
 
+from sqlalchemy.sql import text
+
 class Item(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 
@@ -8,10 +10,31 @@ class Item(db.Model):
 	type = db.Column(db.Integer, nullable=False)
 	lowink = db.Column(db.Boolean, nullable=False)
 
-	account_id = db.Column(db.Integer, db.ForeignKey('account.id'),  nullable=False)
+	account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
 
 	def __init__(self, name, colorcode, type):
-		self.name = name
-		self.type = type
-		self.lowink = False
-		self.colorcode = colorcode
+                self.name = name
+                self.type = type
+                self.lowink = False
+                self.colorcode = colorcode
+
+
+	def get_id(self):
+	        return self.id
+
+	def get_lowink(self):
+		return self.lowink
+
+
+	@staticmethod
+	def find_lowink():
+		stmt = text("SELECT Item.colorcode, Item.name, Item.type"
+				" FROM Item WHERE Item.lowink = 1"
+				" GROUP BY Item.account_id")
+		result = db.engine.execute(stmt)
+
+		response = []
+		for row in result:
+                    response.append({"colorcode":row[0], "name":row[1], "type":row[2]})
+
+		return response

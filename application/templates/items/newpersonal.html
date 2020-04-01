@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
   
 {% block body %}
-<form method="POST" action="{{ url_for('items_create') }}">
+<form method="POST" action="{{ url_for('personal_items_create') }}">
   <tr>
    <td>
       {{ form.colorcode.label }}
@@ -39,3 +39,4 @@
  	 </tr>
 </form>
 {% endblock %}
+
