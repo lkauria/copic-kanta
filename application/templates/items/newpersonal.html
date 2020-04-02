@@ -2,22 +2,14 @@
   
 {% block body %}
 <form method="POST" action="{{ url_for('personal_items_create') }}">
+<h3>Add new item to my collection</h3>
+ <table>
   <tr>
-   <td>
-      {{ form.colorcode.label }}
-   </td>
-   <td>
-      {{ form.colorcode }}
-   </td>
-  </tr>  
- <tr>
-    <td>
-      {{ form.name.label }}
-    </td>
-    <td>
-      {{ form.name }}
-    </td>
-    <td>
+   <td> {{ form.colorcode.label }} </td>
+   <td> {{ form.colorcode }} </td>  
+  <tr>
+    <td> {{ form.name.label }} </td>
+    <td> {{ form.name }} </td>
      <ul>
        {% for error in form.name.errors %}
 	    <li>{{ error }}</li>
@@ -25,18 +17,15 @@
      </ul>
   </tr>
   <tr>
-    <td>
-      {{ form.type.label }}
-    </td>
-    <td>
-      {{ form.type }}
-    </td>
+    <td> {{ form.type.label }} </td>
+    <td> {{ form.type }} </td>
   </tr>
   <tr>
      <td colspan="2">
        <input type="submit" value="Add a new item"/>
      </td>
- 	 </tr>
+  </tr>
+  </table>	 
 </form>
 {% endblock %}
 

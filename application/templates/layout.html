@@ -7,30 +7,50 @@
   </head>
 
   <body>
+
+    <div class="navbar navbar-expand-md navbar-light bg-light mb-4">
+      <a class="navbar-brand" href="#"><h2>Copic-kanta</h2></a>
       {% if current_user.is_authenticated %} 
-      <p>
       <span>Logged in as {{ current_user.username }}. </span>
-      <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+      <a class="nav-link" href="{{ url_for('auth_logout') }}">Log out</a>
       {% else %}
-      <a href="{{ url_for('auth_login') }}">Log in</a>
+      <a class="nav-link" href="{{ url_for('auth_login') }}">Log in</a>
       <span> or </span>
-      <a href="{{ url_for('auth_form') }}">Sign in</a>
-      </p>
+      <a class="nav-link" href="{{ url_for('auth_form') }}">Sign up</a>
       {% endif %}
-    <h2> Copic-kanta </h2>
-    <ul>
-      <li><a href="{{ url_for('items_myindex') }}">List my items</a></li>
-      <li><a href="{{ url_for('items_index') }}">List users' items</a></li>
-      <li><a href="{{ url_for('personal_items_form') }}">Add an item to my list</a></li>
-      {% if current_user.is_admin %}
-        <li><a href="{{ url_for('items_form') }}">Add a new product (admin)</a></li>
-      {% endif %}
-    </ul>
+    </div>
+
+    <div class="nav">
+      <div class="nav-scroller py-1">
+        <ul class="nav justify-content-center">
+	{% if current_user.is_authenticated %}	
+        <li class="nav-item">
+	  <a class="nav-link" href="{{ url_for('items_myindex') }}">List my items</a>
+	</li>
+        <li class="nav-item">
+	  <a class="nav-link" href="{{ url_for('personal_items_form') }}">Add an item to my list</a>
+	</li>
+	{% endif %}
+        {% if current_user.is_admin %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('items_index') }}">List users' items (admin)</a>
+  	</li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('items_form') }}">Add a new product (admin)</a>
+	</li> 
+        <li class ="nav-item">
+	  <a class="nav-link" href="{{ url_for('type_form') }}">Add a new type (admin)</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+   
+    <main role="main" class="container">
     {% block body %}
-      <p>
-       Content 
-      </p>
+    <p>Content</p>
     {% endblock %}
+    </main>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

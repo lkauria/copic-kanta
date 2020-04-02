@@ -5,6 +5,8 @@ from flask_login import login_required, current_user
 from application.items.models import Item
 from application.items.forms import ItemForm, PersonalItemForm
 
+from application.colorcode.models import Colorcode
+
 @app.route("/items/", methods=["GET"])
 def items_index():
 	return render_template("items/list.html", items = Item.query.all())
@@ -20,14 +22,13 @@ def items_myindex():
 @app.route("/items/lowink/", methods=["GET"])
 def items_lowink():
 	return render_template("items/list.html", items =
-#		Item.find_lowink())
 		Item.query.filter(Item.lowink == True))
 
 
 @app.route("/items/new/")
 @login_required
 def items_form():
-	return render_template("items/new.html", form = ItemForm())
+        return render_template("items/new.html", form = ItemForm())
 
 @app.route("/items/newpersonal/")
 @login_required
@@ -68,11 +69,14 @@ def items_create():
     if not form.validate():
        return render_template("items/new.html", form = form)
 
-    item = Item(form.name.data, form.colorcode.data, form.type.data)
+    item = Item(form.name.data, form.colorcode.data, form.type.data.name)
     item.lowink = False
     item.account_id = current_user.id
 
+    cc = Colorcode(form.colorcode.data)
+
     db.session().add(item)
+    db.session().add(cc)
     db.session().commit()
 
     return redirect(url_for("items_index"))
@@ -86,7 +90,7 @@ def personal_items_create():
     if not form.validate():
        return render_template("items/newpersonal.html", form = form)
 
-    item = Item(form.name.data, form.colorcode.data, form.type.data)
+    item = Item(form.name.data, form.colorcode.data.code, form.type.data.name)
     item.account_id = current_user.id
     item.lowink = False
 

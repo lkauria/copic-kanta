@@ -10,3 +10,7 @@ class Colorcode(db.Model):
 
 	def __init__(self, code):
 		self.code = code
+
+	@staticmethod
+	def colorcode_list():
+		return Colorcode.query

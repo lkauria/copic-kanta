@@ -30,4 +30,5 @@ class User(db.Model):
         return True
 
     def is_admin(self):
-        return admin
+        return False
+
