@@ -6,6 +6,7 @@ from application.items.models import Item
 from application.items.forms import ItemForm, PersonalItemForm
 
 from application.colorcode.models import Colorcode
+from application.auth.models import User
 
 @app.route("/items/", methods=["GET"])
 def items_index():
@@ -23,6 +24,11 @@ def items_myindex():
 def items_lowink():
 	return render_template("items/list.html", items =
 		Item.query.filter(Item.lowink == True))
+
+@app.route("/items/most/", methods=["GET"])
+def items_most():
+        return render_template("items/mostquery.html", users =
+                User.most_items(), items = Item.query.all())
 
 
 @app.route("/items/new/")
