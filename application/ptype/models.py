@@ -1,9 +1,9 @@
 
 from application import db
 
-class Type(db.Model):
+class Ptype(db.Model):
 
-    __tablename__ = "type"
+    __tablename__ = "ptype"
 
     id = db.Column(db.Integer, primary_key=True)
 
@@ -14,6 +14,6 @@ class Type(db.Model):
         self.name = name
 
     @staticmethod
-    def type_list():
-        return Type.query
+    def ptype_list():
+        return Ptype.query
 

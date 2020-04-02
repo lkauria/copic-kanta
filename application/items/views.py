@@ -69,7 +69,7 @@ def items_create():
     if not form.validate():
        return render_template("items/new.html", form = form)
 
-    item = Item(form.name.data, form.colorcode.data, form.type.data.name)
+    item = Item(form.name.data, form.colorcode.data, form.ptype.data.name)
     item.lowink = False
     item.account_id = current_user.id
 
@@ -90,7 +90,7 @@ def personal_items_create():
     if not form.validate():
        return render_template("items/newpersonal.html", form = form)
 
-    item = Item(form.name.data, form.colorcode.data.code, form.type.data.name)
+    item = Item(form.name.data, form.colorcode.data.code, form.ptype.data.name)
     item.account_id = current_user.id
     item.lowink = False
 
