@@ -7,7 +7,7 @@ class Item(db.Model):
 
 	name = db.Column(db.String(30), nullable=False)
 	colorcode = db.Column(db.String(30), nullable=False)
-	type = db.Column(db.Integer, nullable=False)
+	type = db.Column(db.String(30), nullable=False)
 	lowink = db.Column(db.Boolean, nullable=False)
 
 	account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
