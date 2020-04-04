@@ -15,5 +15,5 @@ class Ptype(db.Model):
 
     @staticmethod
     def ptype_list():
-        return Ptype.query
+        return Ptype.query.order_by(Ptype.name)
 

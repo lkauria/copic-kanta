@@ -27,8 +27,7 @@ class Item(db.Model):
 
 	def get_lowink(self):
 		return self.lowink
-
-
+ 
 	@staticmethod
 	def find_lowink():
 		stmt = text("SELECT Item.colorcode, Item.name, Item.type"

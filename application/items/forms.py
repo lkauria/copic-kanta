@@ -8,8 +8,7 @@ from application.colorcode.models import Colorcode
 class ItemForm(FlaskForm):
 	name = StringField("Item name", [validators.Length(min=3)])
 	colorcode = StringField("Item colorcode", [validators.Length(min=3)])
-#	ptype = QuerySelectField(u'Item ptype', query_factory = Ptype.ptype_list, get_label='name')
-	ptype = QuerySelectField(u'Item ptype', query_factory = lambda: Ptype.query.all())
+	ptype = QuerySelectField(u'Item ptype', query_factory = Ptype.ptype_list, get_label='name')
 
 	class Meta:
 		csrf = False

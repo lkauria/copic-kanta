@@ -36,10 +36,10 @@ def items_most():
 def items_form():
         return render_template("items/new.html", form = ItemForm())
 
-@app.route("/items/newpersonal/")
+@app.route("/items/new/personal/")
 @login_required
 def personal_items_form():
-        return render_template("items/newpersonal.html", form = PersonalItemForm())
+        return render_template("items/personal.html", form = PersonalItemForm())
 
 
 @app.route("/items/<item_id>/", methods=["POST"])
@@ -88,13 +88,13 @@ def items_create():
     return redirect(url_for("items_index"))
 
 
-@app.route("/items/newpersonal/", methods=["POST"])
+@app.route("/items/personal/", methods=["POST"])
 @login_required
 def personal_items_create():
     form = PersonalItemForm(request.form)
 
     if not form.validate():
-       return render_template("items/newpersonal.html", form = form)
+       return render_template("items/personal.html", form = form)
 
     item = Item(form.name.data, form.colorcode.data.code, form.ptype.data.name)
     item.account_id = current_user.id

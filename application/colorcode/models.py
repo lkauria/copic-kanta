@@ -13,4 +13,4 @@ class Colorcode(db.Model):
 
 	@staticmethod
 	def colorcode_list():
-		return Colorcode.query
+		return Colorcode.query.order_by(Colorcode.code)
