@@ -1,0 +1,11 @@
+Projekti näytti olevan jo hyvällä mallilla.
+
+Käyttötapaukset on selkeästi kirjoitettu ja applikaation käyttötarkoituksen ymmärsi helposti. Tietokantakaavio oli selkeä. 
+
+Toiminnallisuus:
+- kirjautuminen testitunnuksilla applikaatioon onnistui
+- värien lisäys ja poisto onnistuivat, tosin kombinaatioita on tässä kehitysvaiheessa vasta muutama.
+- statuksen false/true muuuttaminen vaihtoi samalla listauksessa olevien värien järjestystä, joka vaikeutti sen tarkistamista, että olihan status muuttunut. Voisiko siis värit pysyä paikallaan statusta muuttaessa ja sorttaus toteuttaa erikseen, jos tarpeellinen?
+- ehdotuksena, että pelkälle adminilla olevat toiminnallisuudet näkyisi vain adminille.
+
+Kokonaisuutena selkeä projekti. Koodi helppolukuista. 
